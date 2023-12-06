@@ -3,6 +3,8 @@ import 'package:bookly_app/features/splash/presentaion/screens/splash_screen.dar
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
+import 'features/home/presentation/screens/home_screen.dart';
+
 void main() {
   runApp(const BooklyApp());
 }
@@ -21,6 +23,7 @@ class BooklyApp extends StatelessWidget {
             fontFamily: Stylefonts.primaryFont,
           ))),
       home: const SplashScreen(),
+      routes: {'/home': (context) => const HomeScreen()},
     );
   }
 }
