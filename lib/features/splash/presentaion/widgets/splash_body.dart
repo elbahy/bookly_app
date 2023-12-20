@@ -36,15 +36,7 @@ class _SplashBodyState extends State<SplashBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        AnimatedBuilder(
-            animation: sliderAnimation,
-            builder: (context, _) {
-              return SlideTransition(
-                position: sliderAnimation,
-                child:
-                    const Text('Read Free Books', textAlign: TextAlign.center),
-              );
-            })
+        SlideAnimation(sliderAnimation: sliderAnimation)
       ],
     );
   }
@@ -61,7 +53,9 @@ class _SplashBodyState extends State<SplashBody>
 
   void navigationToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(const HomeScreen(), transition: Transition.leftToRight);
+      Get.to(() => const HomeScreen(),
+          transition: Transition.leftToRight,
+          duration: const Duration(seconds: 1));
     });
   }
 }
