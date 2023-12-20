@@ -18,18 +18,8 @@ class _SplashBodyState extends State<SplashBody>
 
   @override
   void initState() {
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-    sliderAnimation =
-        Tween<Offset>(begin: const Offset(0, 8), end: const Offset(0, 0))
-            .animate(animationController);
-
-    animationController.forward();
-
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.to(const HomeScreen(), transition: Transition.leftToRight);
-    });
-
+    initAnimation();
+    navigationToHomeScreen();
     super.initState();
   }
 
@@ -57,5 +47,21 @@ class _SplashBodyState extends State<SplashBody>
             })
       ],
     );
+  }
+
+  void initAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    sliderAnimation =
+        Tween<Offset>(begin: const Offset(0, 8), end: const Offset(0, 0))
+            .animate(animationController);
+
+    animationController.forward();
+  }
+
+  void navigationToHomeScreen() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(const HomeScreen(), transition: Transition.leftToRight);
+    });
   }
 }
