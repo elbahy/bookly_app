@@ -54,7 +54,7 @@ class _SplashBodyState extends State<SplashBody>
   void navigationToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
       Get.to(() => const HomeScreen(),
-          transition: Transition.leftToRight,
+          transition: Transition.cupertino,
           duration: const Duration(seconds: 1));
     });
   }

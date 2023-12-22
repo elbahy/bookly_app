@@ -1,5 +1,6 @@
+import 'package:bookly_app/core/constants.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_bar.dart';
-import 'package:bookly_app/features/home/presentation/widgets/custom_listview_item.dart';
+import 'package:bookly_app/features/home/presentation/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,19 +13,19 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 32),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomBar(),
               const SizedBox(height: 32),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.25,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: ((context, index) => const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: CustomListViewItem(),
-                        )),
-                    itemCount: 10),
+                child: const FeatuerdListView(),
               ),
+              const SizedBox(height: 48),
+              const Text(
+                'Best Seller',
+                style: TextStyles.titleMedium,
+              )
             ],
           ),
         ),
