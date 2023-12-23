@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/assets.dart';
 import 'package:bookly_app/core/constants.dart';
+import 'package:bookly_app/features/home/presentation/widgets/best_seller_item.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_bar.dart';
 import 'package:bookly_app/features/home/presentation/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -27,26 +28,8 @@ class HomeScreen extends StatelessWidget {
                 'Best Seller',
                 style: TextStyles.titleMedium,
               ),
-              const SizedBox(height: 18),
-              Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      'assets/images/harry.png',
-                      height: 140,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        'Harry Potter and the Goblet of Fire',
-                        style: TextStyles.bookTitle,
-                      )
-                    ],
-                  )
-                ],
-              )
+              const SizedBox(height: 20),
+              const BestSellerItem()
             ],
           ),
         ),

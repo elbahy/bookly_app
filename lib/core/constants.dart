@@ -15,5 +15,8 @@ class TextStyles {
   );
 
   static TextStyle bookTitle =
-      const TextStyle(fontSize: 24, overflow: TextOverflow.clip, height: 20);
+      const TextStyle(fontSize: 24, overflow: TextOverflow.ellipsis);
+
+  static TextStyle writerName =
+      const TextStyle(fontSize: 18, color: Colors.grey);
 }
