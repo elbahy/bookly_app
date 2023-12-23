@@ -10,7 +10,10 @@ class Stylefonts {
 
 class TextStyles {
   static const TextStyle titleMedium = TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
   );
+
+  static TextStyle bookTitle =
+      const TextStyle(fontSize: 24, overflow: TextOverflow.clip, height: 20);
 }
