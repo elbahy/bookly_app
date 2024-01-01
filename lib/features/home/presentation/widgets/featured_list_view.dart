@@ -5,7 +5,6 @@ class FeatuerdListView extends StatelessWidget {
   const FeatuerdListView({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

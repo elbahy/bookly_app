@@ -1,8 +1,9 @@
 import 'package:bookly_app/core/assets.dart';
-import 'package:bookly_app/features/home/presentation/screens/home_screen.dart';
+
 import 'package:bookly_app/features/splash/presentaion/widgets/slider_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import 'package:go_router/go_router.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -53,9 +54,7 @@ class _SplashBodyState extends State<SplashBody>
 
   void navigationToHomeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const HomeScreen(),
-          transition: Transition.cupertino,
-          duration: const Duration(seconds: 1));
+      GoRouter.of(context).push('/home');
     });
   }
 }

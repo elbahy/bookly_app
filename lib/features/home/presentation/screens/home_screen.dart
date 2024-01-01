@@ -1,6 +1,5 @@
-import 'package:bookly_app/core/assets.dart';
 import 'package:bookly_app/core/constants.dart';
-import 'package:bookly_app/features/home/presentation/widgets/best_seller_item.dart';
+import 'package:bookly_app/features/home/presentation/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_bar.dart';
 import 'package:bookly_app/features/home/presentation/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -14,22 +13,25 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 32),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CustomBar(),
-              const SizedBox(height: 32),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.25,
-                child: const FeatuerdListView(),
+          child: CustomScrollView(
+            slivers: [
+              const SliverToBoxAdapter(child: CustomBar()),
+              const SliverToBoxAdapter(child: SizedBox(height: 32)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  child: const FeatuerdListView(),
+                ),
               ),
-              const SizedBox(height: 48),
-              const Text(
-                'Best Seller',
-                style: TextStyles.titleMedium,
+              const SliverToBoxAdapter(child: SizedBox(height: 48)),
+              const SliverToBoxAdapter(
+                child: Text(
+                  'Best Seller',
+                  style: TextStyles.titleMedium,
+                ),
               ),
-              const SizedBox(height: 20),
-              const BestSellerItem()
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+              const BestSellerListView(),
             ],
           ),
         ),
