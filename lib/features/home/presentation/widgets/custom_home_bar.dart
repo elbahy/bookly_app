@@ -1,8 +1,8 @@
 import 'package:bookly_app/core/assets.dart';
 import 'package:flutter/material.dart';
 
-class CustomBar extends StatelessWidget {
-  const CustomBar({
+class CustomHomeBar extends StatelessWidget {
+  const CustomHomeBar({
     super.key,
   });
 
