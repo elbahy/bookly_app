@@ -2,8 +2,8 @@ import 'package:bookly_app/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class BookListItem extends StatelessWidget {
+  const BookListItem({
     super.key,
   });
 
